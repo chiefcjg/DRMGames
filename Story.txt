@@ -6,3 +6,9 @@ if they can escape they can live. if they fail they will die.
 to make it sporting they have left a map for them, but they have the others map for them. good luck.
 
 forcefield grid cutting you off. Monster is exempted from it and can walk through
+
+1: have to pull/drag a board that is blocking the other player from moving on and they need to do the same for you.
+2: boxes/walls look different and when moved reveal a small path way.
+3: levers needing to be pulled at the same time.
+4: pressure plates needing to be stood on to let the other progress.
+5: final puzzle is they need to touch runes in order on the others map.
