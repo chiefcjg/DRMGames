@@ -436,10 +436,10 @@ MonoBehaviour:
   m_Sensitivity: 0.1
   m_MaxSpeed: 1
   m_MovePress:
-    actionPath: 
+    actionPath: /actions/default/in/Teleport
     needsReinit: 0
   m_MoveValue:
-    actionPath: 
+    actionPath: /actions/default/in/TouchpadPostition
     needsReinit: 0
 --- !u!1 &4968318404708938804
 GameObject:
