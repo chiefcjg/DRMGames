@@ -42,7 +42,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-*.log
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -92,3 +91,6 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+
+*.json
+*.log
