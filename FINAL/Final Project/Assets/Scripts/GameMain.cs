@@ -49,8 +49,6 @@ public class GameMain : MonoBehaviour
     {
         if (Input.GetKeyDown("c"))
         {
-            AI = GameObject.Find("AI");
-            AI.active = false;
             onGameStart();
         }
         if (Input.GetKeyDown("e"))
@@ -63,7 +61,7 @@ public class GameMain : MonoBehaviour
         }
         if (Lever1Ready == true && Lever2Ready == true)
         {
-            puzzle3done = true;
+            
             // insert the gameobject here and disable it from this point on/make it slide into a wall.
 
         }
@@ -83,6 +81,8 @@ public class GameMain : MonoBehaviour
     // will launch the game and will 
     void onGameStart()
     {
+        AI = GameObject.Find("AI");
+        AI.active = false;
         startTime = Time.time;
         gameRun = true;
         StartCoroutine(SpawnAI());
@@ -106,7 +106,7 @@ public class GameMain : MonoBehaviour
     IEnumerator SpawnAI()
     {
         //yield on a new YieldInstruction that waits for 30 seconds.
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(30);
                 spawnAIModel();
     }
     public void spawnAIModel()
@@ -115,6 +115,10 @@ public class GameMain : MonoBehaviour
         AI.gameObject.GetComponent<Patrol>().AIGO = true;        
     }
     public void killswitch1()
+    {
+
+    }
+    public void killswitch2()
     {
 
     }
