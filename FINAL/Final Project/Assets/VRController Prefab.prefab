@@ -65,17 +65,17 @@ MonoBehaviour:
   _parentView: {fileID: 0}
   _childViews:
   - viewID: 1
-    view: {fileID: 3195732731818398467}
+    view: {fileID: 7590698823141310170}
     viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 3195732731818398467}
+    viewToUseIfMovedBack: {fileID: 7590698823141310170}
   - viewID: 2
     view: {fileID: 734298430425092718}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 734298430425092718}
   - viewID: 3
-    view: {fileID: 7590698823141310170}
+    view: {fileID: 3195732731818398467}
     viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 7590698823141310170}
+    viewToUseIfMovedBack: {fileID: 3195732731818398467}
 --- !u!114 &4326964959080542654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dff4fb3b027234c8a2562e96aa0846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 4995657260851230095}
-  _leftHand: {fileID: 8613446671265688390}
-  _rightHand: {fileID: 7257549624129683503}
+  _head: {fileID: 0}
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
 --- !u!114 &1792255673052325906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _syncPosition: 1
   _syncRotation: 1
-  _syncScale: 0
+  _syncScale: 1
   _extrapolation: 0
 --- !u!114 &7516129392262636257
 MonoBehaviour:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68898f56901f9144c9ffb1f08e8e870c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouth: {fileID: 6864108515698066143}
+  mouth: {fileID: 0}
 --- !u!1 &3313384515809039901
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,10 +436,10 @@ MonoBehaviour:
   m_Sensitivity: 0.1
   m_MaxSpeed: 1
   m_MovePress:
-    actionPath: /actions/default/in/Teleport
+    actionPath: 
     needsReinit: 0
   m_MoveValue:
-    actionPath: /actions/default/in/TouchpadPostition
+    actionPath: 
     needsReinit: 0
 --- !u!1 &4968318404708938804
 GameObject:
@@ -495,7 +495,7 @@ MonoBehaviour:
   _components:
   - componentID: 1
     component: {fileID: 7712020863771278122}
-    componentIDHasBeenUsed: 0
+    componentIDHasBeenUsed: 1
   _parentView: {fileID: 134137204488822631}
   _childViews: []
 --- !u!114 &7712020863771278122
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _syncPosition: 1
   _syncRotation: 1
-  _syncScale: 0
+  _syncScale: 1
   _extrapolation: 0
 --- !u!1 &5294360832315301063
 GameObject:
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _syncPosition: 1
   _syncRotation: 1
-  _syncScale: 0
+  _syncScale: 1
   _extrapolation: 0
 --- !u!1 &6831341093864805493
 GameObject:

@@ -9,7 +9,7 @@ public class Bed1 : MonoBehaviour
     {
         if (other.tag == "VRplayer")
         {
-            GameObject.Find("player").GetComponent<GameMain>().player1Ready = true;
+            GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = true;
             Debug.Log("test");
         }
     }
@@ -17,7 +17,7 @@ public class Bed1 : MonoBehaviour
     {
         if (other.tag == "VRplayer")
         {
-            GameObject.Find("player").GetComponent<GameMain>().player1Ready = false;
+            GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = false;
             Debug.Log("test2");
         }
     }

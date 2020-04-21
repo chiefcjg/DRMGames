@@ -25,7 +25,7 @@ public class GameMain : MonoBehaviour
     public bool Plate2Ready = false;
     public bool puzzle4done = false;
 
-
+    /*
     //this is used for puzzle 5 
     public bool Rune1 = false;
     public bool Rune2 = false;
@@ -35,6 +35,8 @@ public class GameMain : MonoBehaviour
     public bool Rune6 = false; 
     public bool puzzle5Part1done = false;
     public bool puzzle5Part2done = false;
+    */
+
 
     //used for testing the timer remove when done testing boards and all
     private void Update()
@@ -46,7 +48,25 @@ public class GameMain : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             onGameEnd();
-        }      
+        }
+        if (player1Ready == true && player2Ready == true)
+        {
+            onGameStart();
+        }
+        if (Lever1Ready == true && Lever2Ready == true)
+        {
+            puzzle3done = true;
+            // insert the gameobject here and disable it from this point on/make it slide into a wall.
+
+        }
+        if (Plate1Ready == true && Plate2Ready == true)
+        {
+            puzzle4done = true;
+            // insert the gameobject here and disable it from this point on/make it slide into a wall.
+
+        }
+
+
     }
 
     // will launch the game and will 
