@@ -6,6 +6,8 @@ using System.Collections;
 public class Patrol : MonoBehaviour
 {
 
+    public bool AIGO = false;
+
     GameObject[] Players;
 
     public Transform sight;
@@ -57,65 +59,72 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.Find("EYES").transform.position, transform.Find("EYES").transform.forward * Range, out hit, Range))
+        if (AIGO == true)
         {
-            if (hit.transform.tag == "VRPlayer")
+            RaycastHit hit;
+            if (Physics.Raycast(transform.Find("EYES").transform.position, transform.Find("EYES").transform.forward * Range, out hit, Range))
             {
-                CanSee = true;
-                Debug.Log("seeeeee");
-                target = hit.transform;
+                if (hit.transform.tag == "VRPlayer")
+                {
+                    CanSee = true;
+                    Debug.Log("seeeeee");
+                    target = hit.transform;
+                }
+                else
+                {
+                    CanSee = false;
+                    target = this.transform;
+                }
             }
-            else
+
+            //checks for player
+            Vector3 targetDir = target.position - transform.position;
+            angle = Vector3.Angle(targetDir, transform.forward);
+            distance = Vector3.Distance(target.position, this.transform.position);
+
+
+            if (!CanSee)
             {
-                CanSee = false;
-                target = this.transform;
+                if (chasing == true)
+                {
+                    waitForChaseTime();
+                }
+                else
+                {
+                    // Choose the next destination point when the agent gets
+                    // close to the current one.
+                    if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                        GotoNextPoint();
+                }
+            }
+
+            if (CanSee)
+            {
+                Debug.Log("see it");
+                if (distance < 20)
+                {
+                    Debug.Log("chasing");
+                    chasing = true;
+                    agent.destination = target.position;
+                }
+                if (distance < 2)
+                {
+                    Debug.Log("killed");
+                    GotoNextPoint();
+                    chasing = false;
+                }
+                else
+                {
+                    // Choose the next destination point when the agent gets
+                    // close to the current one.
+                    if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                        GotoNextPoint();
+                }
             }
         }
-
-        //checks for player
-        Vector3 targetDir = target.position - transform.position;
-        angle = Vector3.Angle(targetDir, transform.forward);
-        distance = Vector3.Distance(target.position, this.transform.position);
-
-
-        if (!CanSee)
+        if(AIGO == false)
         {
-            if (chasing == true)
-            {
-                waitForChaseTime();
-            }
-            else
-            {
-                // Choose the next destination point when the agent gets
-                // close to the current one.
-                if (!agent.pathPending && agent.remainingDistance < 0.5f)
-                    GotoNextPoint();
-            }
-        }
-
-        if (CanSee)
-        {
-            Debug.Log("see it");
-            if (distance < 20)
-            {
-                Debug.Log("chasing");
-                chasing = true;
-                agent.destination = target.position;
-            }
-            if (distance < 2)
-            {
-                Debug.Log("killed");
-                GotoNextPoint();
-                chasing = false;
-            }
-            else
-            {
-                // Choose the next destination point when the agent gets
-                // close to the current one.
-                if (!agent.pathPending && agent.remainingDistance < 0.5f)
-                    GotoNextPoint();
-            }
+            agent.destination = transform.position;
         }
     }
     IEnumerator waitForChaseTime()

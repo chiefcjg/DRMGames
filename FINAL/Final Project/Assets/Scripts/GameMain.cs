@@ -8,6 +8,7 @@ public class GameMain : MonoBehaviour
     // AI
 
     public GameObject AI;
+    public GameObject AISpawnLocation;
 
     //used to track when they start the game and end the game.
     public float startTime;
@@ -46,8 +47,10 @@ public class GameMain : MonoBehaviour
     //used for testing the timer remove when done testing boards and all
     private void Update()
     {
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("c"))
         {
+            AI = GameObject.Find("AI");
+            AI.active = false;
             onGameStart();
         }
         if (Input.GetKeyDown("e"))
@@ -82,6 +85,7 @@ public class GameMain : MonoBehaviour
     {
         startTime = Time.time;
         gameRun = true;
+        StartCoroutine(SpawnAI());
     }
 
     // will end the game and track end time 
@@ -99,15 +103,16 @@ public class GameMain : MonoBehaviour
     {
         Lever2Ready = true;
     }
-    IEnumerator spawnAI()
+    IEnumerator SpawnAI()
     {
-        yield return new WaitForSeconds(30);
-
-        spawnAIModel();
+        //yield on a new YieldInstruction that waits for 30 seconds.
+        yield return new WaitForSeconds(20);
+                spawnAIModel();
     }
     public void spawnAIModel()
-        {
-         AI = GameObject.Find("AI");
-        }
-
+    {
+        AI.active=true;
+        AI.gameObject.GetComponent<Patrol>().AIGO = true;        
+    }
+    
 }

@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Bed1 : MonoBehaviour
 {
-    public GameObject playerinBed;
-    public Transform spawnlocation;
+    public GameObject playerinBed = null;
+    public Transform spawnlocation = null;
 
     private void Awake()
     {
         spawnlocation = GameObject.Find("Spawn location 1").transform;
     }
-    // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+    
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "VRplayer")
+        Debug.Log("work");
+        if (other.tag == "VRPlayer")
         {
+            Debug.Log("work2");
             playerinBed = other.gameObject;
             GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = true;
         }
     }
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
-        if (other.tag == "VRplayer")
+        if (other.tag == "VRPlayer")
         {
             playerinBed = null;
             GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = false;
