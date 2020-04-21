@@ -4,20 +4,47 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Rock2_snow
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
-  m_LightmapFlags: 5
+  m_Shader: {fileID: -6465566751694194690, guid: f867b3d238b9b0943a12df8ba1418a1c,
+    type: 3}
+  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    _SPECGLOSSMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_62B900D9:
+        m_Texture: {fileID: 2800000, guid: 42c12cb55ddd98245a0b2c96121c8a5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6AB1103D:
+        m_Texture: {fileID: 2800000, guid: 27cfd5114f148ff49acff242847ce022, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_CE664847:
+        m_Texture: {fileID: 2800000, guid: d0692a948ca573d4cb0b93ffb1c8a033, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_D9404C09:
+        m_Texture: {fileID: 2800000, guid: 42c12cb55ddd98245a0b2c96121c8a5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_EBE3FF1B:
+        m_Texture: {fileID: 2800000, guid: 27cfd5114f148ff49acff242847ce022, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_FC0DD0F1:
+        m_Texture: {fileID: 2800000, guid: 42c12cb55ddd98245a0b2c96121c8a5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 3a821c28b70b2b447ab3e66e3a2229e5, type: 3}
         m_Scale: {x: 8, y: 8}
@@ -67,16 +94,24 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_6AB0992F: 0.342
+    - Vector1_8CF23F9: 1
+    - Vector1_B2D79BDC: 1
+    - Vector1_F24A527D: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
