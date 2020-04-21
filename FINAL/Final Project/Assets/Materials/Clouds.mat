@@ -77,7 +77,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_BC02F35B: {r: 0.066037714, g: 0.06541472, b: 0.06541472, a: 0}
-    - Color_F46E9500: {r: 0, g: 0, b: 0, a: 0}
+    - Color_F46E9500: {r: 0.103773594, g: 0.09006765, b: 0.09006765, a: 0}
     - Vector4_26D349B2: {r: 1, g: 0, b: 0, a: 120}
     - Vector4_AE059BBD: {r: 0, g: 1, b: -1, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
