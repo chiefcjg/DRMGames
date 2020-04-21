@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7101848794313329353}
   - component: {fileID: 134137204488822631}
-  - component: {fileID: 4326964959080542654}
   - component: {fileID: 1792255673052325906}
   m_Layer: 0
   m_Name: VR Player
@@ -54,15 +53,15 @@ MonoBehaviour:
   _sceneViewOwnedByCreatingClient: 1
   _sceneViewPreventOwnershipTakeover: 0
   _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 1
+  _isRootPrefabView: 0
   _components:
   - componentID: 1
-    component: {fileID: 4326964959080542654}
+    component: {fileID: 0}
     componentIDHasBeenUsed: 1
   - componentID: 2
     component: {fileID: 1792255673052325906}
     componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
+  _parentView: {fileID: 2870283766585128560}
   _childViews:
   - viewID: 1
     view: {fileID: 7590698823141310170}
@@ -76,21 +75,6 @@ MonoBehaviour:
     view: {fileID: 3195732731818398467}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 3195732731818398467}
---- !u!114 &4326964959080542654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567151322337615696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08dff4fb3b027234c8a2562e96aa0846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 0}
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
 --- !u!114 &1792255673052325906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +365,9 @@ GameObject:
   - component: {fileID: 6077475219126969159}
   - component: {fileID: 1539441910534153858}
   - component: {fileID: 954567585788871570}
+  - component: {fileID: 2870283766585128560}
+  - component: {fileID: 1146229494314033981}
+  - component: {fileID: 4381526461206612544}
   m_Layer: 0
   m_Name: VRController Prefab
   m_TagString: VRPlayer
@@ -441,6 +428,68 @@ MonoBehaviour:
   m_MoveValue:
     actionPath: 
     needsReinit: 0
+--- !u!114 &2870283766585128560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745503413182855036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 0}
+  _sceneViewUUID: 
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 1
+  _components:
+  - componentID: 1
+    component: {fileID: 1146229494314033981}
+    componentIDHasBeenUsed: 1
+  - componentID: 2
+    component: {fileID: 4381526461206612544}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews:
+  - viewID: 1
+    view: {fileID: 134137204488822631}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 134137204488822631}
+--- !u!114 &1146229494314033981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745503413182855036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08dff4fb3b027234c8a2562e96aa0846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4995657260851230095}
+  _leftHand: {fileID: 8613446671265688390}
+  _rightHand: {fileID: 7257549624129683503}
+--- !u!114 &4381526461206612544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745503413182855036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!1 &4968318404708938804
 GameObject:
   m_ObjectHideFlags: 0
