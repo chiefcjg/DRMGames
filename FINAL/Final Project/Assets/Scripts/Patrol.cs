@@ -13,12 +13,14 @@ public class Patrol : MonoBehaviour
     float Range = 100;
 
     bool chasing;
-    public Transform target;
+    public Transform target = null;
     float distance;
-    public Transform[] points;
+
+    int pointCount;
+    public GameObject[] points;
     private int destPoint = 0;
+
     private NavMeshAgent agent;
-    public Transform goal;
     float angle;
 
 
@@ -32,6 +34,8 @@ public class Patrol : MonoBehaviour
         // approaches a destination point).
         agent.autoBraking = false;
 
+        points = GameObject.FindGameObjectsWithTag("PatrolPoints");
+        
         GotoNextPoint();
     }
 
@@ -43,7 +47,7 @@ public class Patrol : MonoBehaviour
             return;
 
         // Set the agent to go to the currently selected destination.
-        agent.destination = points[destPoint].position;
+        agent.destination = points[destPoint].transform.position;
 
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
@@ -51,10 +55,8 @@ public class Patrol : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
-
-
         RaycastHit hit;
         if (Physics.Raycast(transform.Find("EYES").transform.position, transform.Find("EYES").transform.forward * Range, out hit, Range))
         {
@@ -62,11 +64,12 @@ public class Patrol : MonoBehaviour
             {
                 CanSee = true;
                 Debug.Log("seeeeee");
+                target = hit.transform;
             }
             else
             {
                 CanSee = false;
-                Debug.Log("wort");
+                target = this.transform;
             }
         }
 
@@ -80,8 +83,7 @@ public class Patrol : MonoBehaviour
         {
             if (chasing == true)
             {
-                GotoNextPoint();
-                chasing = false;
+                waitForChaseTime();
             }
             else
             {
@@ -99,7 +101,7 @@ public class Patrol : MonoBehaviour
             {
                 Debug.Log("chasing");
                 chasing = true;
-                agent.destination = goal.position;
+                agent.destination = target.position;
             }
             if (distance < 2)
             {
@@ -115,5 +117,11 @@ public class Patrol : MonoBehaviour
                     GotoNextPoint();
             }
         }
+    }
+    IEnumerator waitForChaseTime()
+    {
+        yield return new WaitForSeconds(3);
+        GotoNextPoint();
+        chasing = false;
     }
 }

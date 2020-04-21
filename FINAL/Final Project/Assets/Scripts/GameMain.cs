@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameMain : MonoBehaviour
 {
+
+    // AI
+
+    public GameObject AI;
+
     //used to track when they start the game and end the game.
     public float startTime;
     public float endTime;
@@ -65,8 +70,11 @@ public class GameMain : MonoBehaviour
             // insert the gameobject here and disable it from this point on/make it slide into a wall.
 
         }
-
-
+        if (gameRun == true)
+        {
+            GameObject.Find("bed1").GetComponent<Bed1>().Sleeptimemove();
+            GameObject.Find("bed2").GetComponent<Bed2>().Sleeptimemove();
+        }
     }
 
     // will launch the game and will 
@@ -83,15 +91,23 @@ public class GameMain : MonoBehaviour
         gameRun = false;
     }
 
-    // will process the call of the levers 
-    void onLeverCheck()
+    public void Leverone()
     {
-        if (Lever1Ready == true && Lever2Ready == true)
-        {
-            puzzle3done = true;
-            // insert the gameobject here and disable it from this point on/make it slide into a wall.
-        }
+        Lever1Ready = true;
     }
-    
+    public void LeverTwo()
+    {
+        Lever2Ready = true;
+    }
+    IEnumerator spawnAI()
+    {
+        yield return new WaitForSeconds(30);
+
+        spawnAIModel();
+    }
+    public void spawnAIModel()
+        {
+         AI = GameObject.Find("AI");
+        }
 
 }
