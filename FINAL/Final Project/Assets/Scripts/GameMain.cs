@@ -114,5 +114,8 @@ public class GameMain : MonoBehaviour
         AI.active=true;
         AI.gameObject.GetComponent<Patrol>().AIGO = true;        
     }
-    
+    public void killswitch1()
+    {
+
+    }
 }

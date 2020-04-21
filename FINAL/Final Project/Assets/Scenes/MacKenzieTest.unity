@@ -296,17 +296,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.37113
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.37113
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.37113
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
@@ -584,6 +584,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
@@ -2830,6 +2845,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.37
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
       propertyPath: m_Name
@@ -3689,6 +3719,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 3ecae0420ac084e46bf2630682a2d20b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3ecae0420ac084e46bf2630682a2d20b,
         type: 3}
@@ -4631,6 +4676,7 @@ GameObject:
   - component: {fileID: 1746918723}
   - component: {fileID: 1746918722}
   - component: {fileID: 1746918724}
+  - component: {fileID: 1746918725}
   m_Layer: 0
   m_Name: VRController
   m_TagString: VRPlayer
@@ -4650,11 +4696,11 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.05
+  m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.5
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.01
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1746918723
 Transform:
@@ -4664,7 +4710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746918721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.1, y: 0, z: -4.4}
+  m_LocalPosition: {x: -35, y: 0, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1028838272}
@@ -4683,14 +4729,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9af25f42d9e9f94e96df934834ede7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Sensitivity: 0.1
-  m_MaxSpeed: 1
+  m_Sensitivity: 0.2
+  m_MaxSpeed: 0.5
   m_MovePress:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
   m_MoveValue:
     actionPath: /actions/default/in/TouchpadPostition
     needsReinit: 0
+--- !u!54 &1746918725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746918721}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1773664764
 GameObject:
   m_ObjectHideFlags: 0
