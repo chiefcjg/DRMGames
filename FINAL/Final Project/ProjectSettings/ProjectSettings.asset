@@ -675,10 +675,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 62407980-bada-484d-9776-02a1e6ae1c61
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Final Project
+  organizationId: jimbit
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
