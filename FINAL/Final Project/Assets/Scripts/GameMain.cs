@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
+    public Image img;
 
     // AI
-
     public GameObject AI;
     public GameObject AISpawnLocation;
 
@@ -25,23 +27,15 @@ public class GameMain : MonoBehaviour
     public bool Lever2Ready = false;
     public bool puzzle3done = false;
 
-
     //this is used for when both pressureplates are used at the same time.
     public bool Plate1Ready = false;
     public bool Plate2Ready = false;
     public bool puzzle4done = false;
 
-    /*
-    //this is used for puzzle 5 
-    public bool Rune1 = false;
-    public bool Rune2 = false;
-    public bool Rune3 = false;
-    public bool Rune4 = false;
-    public bool Rune5 = false;
-    public bool Rune6 = false; 
-    public bool puzzle5Part1done = false;
-    public bool puzzle5Part2done = false;
-    */
+    private void Start()
+    {
+        img = GameObject.Find("FadeinScreenPanel").GetComponent<Image>();
+    }
 
 
     //used for testing the timer remove when done testing boards and all
@@ -59,18 +53,24 @@ public class GameMain : MonoBehaviour
         {
             onGameStart();
         }
+
         if (Lever1Ready == true && Lever2Ready == true)
         {
-            
-            // insert the gameobject here and disable it from this point on/make it slide into a wall.
-
+            puzzle4done = true;
+        }
+        if (puzzle4done == true)
+        {
+            puzzle4Walls();
         }
         if (Plate1Ready == true && Plate2Ready == true)
         {
-            puzzle4done = true;
-            // insert the gameobject here and disable it from this point on/make it slide into a wall.
-
+            puzzle3done = true;
         }
+        if (puzzle3done == true)
+        {
+            puzzle3Walls();
+        }
+
         if (gameRun == true)
         {
             GameObject.Find("bed1").GetComponent<Bed1>().Sleeptimemove();
@@ -78,13 +78,51 @@ public class GameMain : MonoBehaviour
         }
     }
 
+    private void puzzle4Walls()
+    {
+        GameObject wallsPlayer1;
+        GameObject wallsPlayer2;
+
+        Vector3 endlocationWall1;
+        Vector3 endlocationWall2;
+
+        wallsPlayer1 = GameObject.Find("WallPuzzle4Player1");
+        wallsPlayer2 = GameObject.Find("WallsPuzzle4Player2");
+
+        endlocationWall1 = new Vector3(wallsPlayer1.transform.position.x, -5, wallsPlayer1.gameObject.transform.position.z);
+        endlocationWall2 = new Vector3(wallsPlayer2.transform.position.x, -5, wallsPlayer1.gameObject.transform.position.z);
+
+        wallsPlayer1.transform.position = endlocationWall1;
+        wallsPlayer2.transform.position = endlocationWall2;
+    }
+
+    private void puzzle3Walls()
+    {
+        GameObject wallsPlayer1;
+        GameObject wallsPlayer2;
+
+        Vector3 endlocationWall1;
+        Vector3 endlocationWall2;
+
+        wallsPlayer1 = GameObject.Find("WallPuzzle3Player1");
+        wallsPlayer2 = GameObject.Find("WallsPuzzle3Player2");
+
+        endlocationWall1 = new Vector3(wallsPlayer1.transform.position.x, -5, wallsPlayer1.gameObject.transform.position.z);
+        endlocationWall2 = new Vector3(wallsPlayer2.transform.position.x, -5, wallsPlayer1.gameObject.transform.position.z);
+
+        wallsPlayer1.transform.position = endlocationWall1;
+        wallsPlayer2.transform.position = endlocationWall2;
+    }
+
     // will launch the game and will 
     void onGameStart()
     {
         AI = GameObject.Find("AI");
+        StartCoroutine(FadeImage(false));
+        AI.gameObject.transform.position = new Vector3(0.35f, 1f, -4.5f);
         AI.active = false;
         startTime = Time.time;
-        gameRun = true;
+        StartCoroutine(DialogWait());
         StartCoroutine(SpawnAI());
     }
 
@@ -103,23 +141,61 @@ public class GameMain : MonoBehaviour
     {
         Lever2Ready = true;
     }
+
+    IEnumerator DialogWait()
+    {
+        yield return new WaitForSeconds(10);
+        gameRun = true;
+        StartCoroutine(FadeImage(true));
+    }
     IEnumerator SpawnAI()
     {
         //yield on a new YieldInstruction that waits for 30 seconds.
-        yield return new WaitForSeconds(30);
-                spawnAIModel();
+        yield return new WaitForSeconds(35);
+        spawnAIModel();
     }
+
     public void spawnAIModel()
     {
-        AI.active=true;
-        AI.gameObject.GetComponent<Patrol>().AIGO = true;        
+        AI.active = true;
+        AI.gameObject.GetComponent<Patrol>().AIGO = true;
     }
+
     public void killswitch1()
     {
-
+        AI.transform.position = GameObject.Find("AISpawnkillSwitch1").transform.position;
     }
     public void killswitch2()
     {
-
+        AI.transform.position = GameObject.Find("AISpawnkillSwitch2").transform.position;
     }
+
+
+
+    IEnumerator FadeImage(bool fadeAway)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 10; i >= 0; i -= Time.deltaTime)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 10; i += Time.deltaTime)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+    }
+
 }
