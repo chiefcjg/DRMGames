@@ -16,12 +16,14 @@ public class RealtimeThrowable : Throwable
         rtTransform = gameObject.GetComponent<RealtimeTransform>();
         rtView = gameObject.GetComponent<RealtimeView>();
     }
+    // it has been grabbed
     public void Grabbed()
     {
         rtTransform.RequestOwnership();
         rtView.RequestOwnership();
         ownership = rtTransform.ownerID;
     }
+    // hand hover? then hand can grab.
     public override void OnHandHoverBegin(Hand hand)
     {
         GrabTypes bestGrabType = hand.GetBestGrabbingType();

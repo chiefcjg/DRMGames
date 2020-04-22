@@ -10,6 +10,7 @@ public class Plate1 : MonoBehaviour
     public bool MovingPlateDone = false;
     public bool MovePlate = false;
 
+    //grabs its positions
     private void Awake()
     {
         originalLocation = this.transform.position;
@@ -27,12 +28,15 @@ public class Plate1 : MonoBehaviour
         {
             PlayerHere();
         }
-        if(MovingPlateDone == true)
+        //will player audio and will mark as this is done
+        if (MovingPlateDone == true)
         {
             GameObject.Find("GameManager").GetComponent<GameMain>().Plate1Ready = true;
+            GetComponent<AudioSource>().Play(0);
         }
     }
 
+    //looks and waits for player.
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "VRPlayer")
@@ -49,6 +53,7 @@ public class Plate1 : MonoBehaviour
         }
     }
 
+    //will move the plate.
     public void PlayerHere()
     {
         this.gameObject.transform.position = new Vector3(originalLocation.x, (originalLocation.y - 0.1f), originalLocation.z);

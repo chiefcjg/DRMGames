@@ -5,11 +5,14 @@ using System.Collections;
 
 public class Patrol : MonoBehaviour
 {
-
+    //bool just for simple check
     public bool AIGO = false;
 
+    //grabs and stores players.
     GameObject[] Players;
 
+
+    //scanning
     public Transform sight;
     bool CanSee;
     float Range = 100;
@@ -19,10 +22,12 @@ public class Patrol : MonoBehaviour
     public GameObject TargetPlayer;
     float distance;
 
+    //patrol loop.
     int pointCount;
     public GameObject[] points;
     private int destPoint = 0;
 
+    //AINavMesh
     private NavMeshAgent agent;
     float angle;
 
@@ -108,7 +113,8 @@ public class Patrol : MonoBehaviour
                 }
                 if (distance < 1)
                 {
-                    if(TargetPlayer.GetComponent<PlayerScript>().Player == 1)
+                    GameObject.Find("scream").gameObject.GetComponent<AudioSource>().Play(0);
+                    if (TargetPlayer.GetComponent<PlayerScript>().Player == 1)
                     {
                         TargetPlayer.gameObject.transform.position = GameObject.Find("Spawn location 1").gameObject.transform.position;
                     }

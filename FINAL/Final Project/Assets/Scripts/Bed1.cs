@@ -11,7 +11,8 @@ public class Bed1 : MonoBehaviour
     {
         spawnlocation = GameObject.Find("Spawn location 1").transform;
     }
-    
+
+    //finds the player, makes it player two
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "VRPlayer")
@@ -21,6 +22,8 @@ public class Bed1 : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = true;
         }
     }
+
+    //bye player
     public void OnTriggerExit(Collider other)
     {
         if (other.tag == "VRPlayer")
@@ -29,6 +32,8 @@ public class Bed1 : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = false;
         }
     }
+
+    //finds the player, moves them to their spawn
     public void Sleeptimemove()
     {
         playerinBed.transform.position = spawnlocation.position;

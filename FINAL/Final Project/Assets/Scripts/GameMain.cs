@@ -116,9 +116,11 @@ public class GameMain : MonoBehaviour
         wallsPlayer2.transform.position = endlocationWall2;
     }
 
-    // will launch the game and will 
+    // will launch the game and will trigger audios and spawn in AI
     void onGameStart()
     {
+        GetComponent<AudioSource>().Play(0);
+
         AI = GameObject.Find("AI");
         StartCoroutine(FadeImage(false));
         AI.gameObject.transform.position = new Vector3(0.35f, 1f, -4.5f);
@@ -128,7 +130,7 @@ public class GameMain : MonoBehaviour
         StartCoroutine(SpawnAI());
     }
 
-    // will end the game and track end time 
+    // will end the game and track end time and times caught
     public void onGameEnd()
     {
         endTime = Time.time - startTime;
@@ -179,7 +181,7 @@ public class GameMain : MonoBehaviour
     }
 
 
-
+    //fade in fade out
     IEnumerator FadeImage(bool fadeAway)
     {
         // fade from opaque to transparent

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - VRPlayer
   - PatrolPoints
+  - AI
   layers:
   - Default
   - TransparentFX
