@@ -6,7 +6,15 @@ using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
+    public Text TimeText;
+    public string EndTimeText;
+
+    public Text CaughtText;
+    public string EndCaughtText;
+
     public Image img;
+
+    public int TimesCaught;
 
     // AI
     public GameObject AI;
@@ -35,20 +43,14 @@ public class GameMain : MonoBehaviour
     private void Start()
     {
         img = GameObject.Find("FadeinScreenPanel").GetComponent<Image>();
+        TimeText = GameObject.Find("Time").GetComponent<Text>();
+        CaughtText = GameObject.Find("Caught").GetComponent<Text>();
     }
 
 
     //used for testing the timer remove when done testing boards and all
     private void Update()
     {
-        if (Input.GetKeyDown("c"))
-        {
-            onGameStart();
-        }
-        if (Input.GetKeyDown("e"))
-        {
-            onGameEnd();
-        }
         if (player1Ready == true && player2Ready == true)
         {
             onGameStart();
@@ -127,10 +129,16 @@ public class GameMain : MonoBehaviour
     }
 
     // will end the game and track end time 
-    void onGameEnd()
+    public void onGameEnd()
     {
         endTime = Time.time - startTime;
         gameRun = false;
+
+        EndTimeText += "Your time was: " + endTime + "\n";
+        TimeText.text = EndTimeText;
+
+        EndCaughtText += "You were caught: " + TimesCaught + "Times\n";
+        CaughtText.text = EndCaughtText;
     }
 
     public void Leverone()
@@ -151,7 +159,7 @@ public class GameMain : MonoBehaviour
     IEnumerator SpawnAI()
     {
         //yield on a new YieldInstruction that waits for 30 seconds.
-        yield return new WaitForSeconds(35);
+        yield return new WaitForSeconds(45);
         spawnAIModel();
     }
 

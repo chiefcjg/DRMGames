@@ -68,7 +68,6 @@ public class Patrol : MonoBehaviour
                 if (hit.transform.tag == "VRPlayer")
                 {
                     CanSee = true;
-                    Debug.Log("seeeeee");
                     target = hit.transform;
                     TargetPlayer = target.gameObject;
                 }
@@ -102,10 +101,8 @@ public class Patrol : MonoBehaviour
 
             if (CanSee)
             {
-                Debug.Log("see it");
                 if (distance < 1)
                 {
-                    Debug.Log("chasing");
                     chasing = true;
                     agent.destination = target.position;
                 }
@@ -120,9 +117,9 @@ public class Patrol : MonoBehaviour
                     {
                         TargetPlayer.gameObject.transform.position = GameObject.Find("Spawn location 2").gameObject.transform.position;
                     }
-                    Debug.Log("killed");
                     GotoNextPoint();
                     chasing = false;
+                    GameObject.Find("GameManager").GetComponent<GameMain>().TimesCaught++;
                 }
                 else
                 {

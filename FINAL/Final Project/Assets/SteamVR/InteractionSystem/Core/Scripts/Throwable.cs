@@ -84,7 +84,7 @@ namespace Valve.VR.InteractionSystem
 
 
         //-------------------------------------------------
-        protected virtual void OnHandHoverBegin( Hand hand )
+        public virtual void OnHandHoverBegin( Hand hand )
 		{
 			bool showHint = false;
 
