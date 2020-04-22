@@ -75,6 +75,10 @@ MonoBehaviour:
     view: {fileID: 3195732731818398467}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 3195732731818398467}
+  - viewID: 4
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &1792255673052325906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +466,10 @@ MonoBehaviour:
     view: {fileID: 134137204488822631}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 134137204488822631}
+  - viewID: 2
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &1146229494314033981
 MonoBehaviour:
   m_ObjectHideFlags: 0

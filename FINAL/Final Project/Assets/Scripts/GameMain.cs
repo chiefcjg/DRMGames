@@ -124,7 +124,7 @@ public class GameMain : MonoBehaviour
         AI = GameObject.Find("AI");
         StartCoroutine(FadeImage(false));
         AI.gameObject.transform.position = new Vector3(0.35f, 1f, -4.5f);
-        AI.active = false;
+        AI.SetActive(true);
         startTime = Time.time;
         StartCoroutine(DialogWait());
         StartCoroutine(SpawnAI());
@@ -167,7 +167,7 @@ public class GameMain : MonoBehaviour
 
     public void spawnAIModel()
     {
-        AI.active = true;
+        AI.SetActive(true);
         AI.gameObject.GetComponent<Patrol>().AIGO = true;
     }
 

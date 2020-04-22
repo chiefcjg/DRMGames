@@ -515,7 +515,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &21586706
 Transform:
@@ -665,6 +665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (86)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &30486624
@@ -678,7 +683,6 @@ GameObject:
   - component: {fileID: 30486632}
   - component: {fileID: 30486631}
   - component: {fileID: 30486630}
-  - component: {fileID: 30486629}
   - component: {fileID: 30486628}
   - component: {fileID: 30486627}
   - component: {fileID: 30486626}
@@ -688,7 +692,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &30486625
 MonoBehaviour:
@@ -699,13 +703,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 30486624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &30486626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30486624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 85520601d1fc3b43814a20cf538ef7d9
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 30486625}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &30486627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -751,18 +780,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 30486626}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -771,119 +789,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &30486627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30486624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &30486628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30486624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: f56ad3ccf3a5f94585f34daa890ba4d1
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 30486627}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &30486629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1152,6 +1058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -1467,6 +1378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &63184209
@@ -1645,7 +1561,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1670,7 +1586,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &88428927
 Transform:
@@ -1737,7 +1653,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2167,7 +2083,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &121734400
 Transform:
@@ -2343,7 +2259,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &147577150
 Transform:
@@ -2410,7 +2326,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2586,6 +2502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &158905397
@@ -2675,6 +2596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (67)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &159309168
@@ -2693,7 +2619,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &159309169
 Transform:
@@ -2971,6 +2897,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &186063209
@@ -3060,6 +2991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (55)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &191974469
@@ -3108,7 +3044,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &205386594
 Transform:
@@ -3693,7 +3629,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &249263435
 Transform:
@@ -3843,6 +3779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &258365052
@@ -3931,6 +3872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -4021,6 +3967,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &263199845
@@ -4109,6 +4060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -4218,6 +4174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &267132336
@@ -4236,7 +4197,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &267132337
 Transform:
@@ -4465,6 +4426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (78)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &275066094
@@ -4482,7 +4448,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &275066095
 Transform:
@@ -4549,7 +4515,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -4798,7 +4764,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &291362035
 Transform:
@@ -4877,7 +4843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &305178270
 Transform:
@@ -5275,6 +5241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &318239305
@@ -5442,6 +5413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -5704,6 +5680,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &332414812
@@ -5953,7 +5934,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &364960606
 Transform:
@@ -6062,7 +6043,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &366449558
 Transform:
@@ -6140,7 +6121,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &368341899
 Transform:
@@ -6207,7 +6188,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6304,6 +6285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &383564918
@@ -6392,6 +6378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -6482,6 +6473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (48)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &392888192
@@ -6500,7 +6496,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &392888193
 Transform:
@@ -6649,6 +6645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -6815,6 +6816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (73)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &427670456
@@ -6903,6 +6909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -7023,6 +7034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &445630045
@@ -7111,6 +7127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -7361,7 +7382,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &452062367
 Transform:
@@ -7511,6 +7532,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &472026454
@@ -7599,6 +7625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -7863,7 +7894,6 @@ GameObject:
   - component: {fileID: 490759492}
   - component: {fileID: 490759491}
   - component: {fileID: 490759490}
-  - component: {fileID: 490759489}
   - component: {fileID: 490759488}
   - component: {fileID: 490759487}
   - component: {fileID: 490759486}
@@ -7873,7 +7903,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &490759485
 MonoBehaviour:
@@ -7884,13 +7914,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 490759484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &490759486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490759484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 2264b40d4a61894c995b96e96eb076aa
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 490759485}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &490759487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7936,18 +7991,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 490759486}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -7956,119 +8000,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &490759487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490759484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &490759488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490759484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: f87f54496c22bd45ba0b10e7c4cfe507
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 490759487}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &490759489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8267,7 +8199,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &493602081
 Transform:
@@ -8346,7 +8278,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &494828208
 Transform:
@@ -8496,6 +8428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!4 &498257096 stripped
@@ -8515,7 +8452,6 @@ GameObject:
   - component: {fileID: 508050616}
   - component: {fileID: 508050615}
   - component: {fileID: 508050614}
-  - component: {fileID: 508050613}
   - component: {fileID: 508050612}
   - component: {fileID: 508050611}
   - component: {fileID: 508050610}
@@ -8525,7 +8461,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &508050609
 MonoBehaviour:
@@ -8536,13 +8472,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 508050608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &508050610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508050608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 3fe0fd275cd2b043aea0ec93d21215a4
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 508050609}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &508050611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8588,18 +8549,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 508050610}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -8608,119 +8558,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &508050611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508050608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &508050612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508050608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 44c499199c61b74184f12af1222b4682
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 508050611}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &508050613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9021,6 +8859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &513329444
@@ -9034,7 +8877,6 @@ GameObject:
   - component: {fileID: 513329452}
   - component: {fileID: 513329451}
   - component: {fileID: 513329450}
-  - component: {fileID: 513329449}
   - component: {fileID: 513329448}
   - component: {fileID: 513329447}
   - component: {fileID: 513329446}
@@ -9044,7 +8886,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &513329445
 MonoBehaviour:
@@ -9055,13 +8897,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 513329444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &513329446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513329444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 27f5324c2d3aa54ca87c32bcfd3d514f
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 513329445}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &513329447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9107,18 +8974,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 513329446}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -9127,119 +8983,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &513329447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513329444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &513329448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513329444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 0a6b0f527aec1840986042fb6da771ca
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 513329447}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &513329449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9430,6 +9174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &526454647
@@ -9448,7 +9197,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &526454648
 Transform:
@@ -9571,7 +9320,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &538362802
 Transform:
@@ -9800,6 +9549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &563707976 stripped
@@ -9837,7 +9591,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &566867643
 Transform:
@@ -9916,7 +9670,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &580531367
 Transform:
@@ -10159,7 +9913,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10255,6 +10009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -10370,7 +10129,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10624,6 +10383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -10982,7 +10746,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &646327592
 Transform:
@@ -11176,6 +10940,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &667721881 stripped
@@ -11213,7 +10982,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &674223004
 Transform:
@@ -11292,7 +11061,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &674317276
 Transform:
@@ -11371,7 +11140,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &678264782
 Transform:
@@ -11595,7 +11364,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &696535455
 Transform:
@@ -11706,7 +11475,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &714175007
 Transform:
@@ -12045,6 +11814,10 @@ MonoBehaviour:
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &736178093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12165,7 +11938,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &749854974
 Transform:
@@ -12246,7 +12019,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &755219017
 Transform:
@@ -12354,7 +12127,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &760963439
 Transform:
@@ -12503,6 +12276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -12670,6 +12448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -12952,7 +12735,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &799775808
 Transform:
@@ -13031,7 +12814,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &801654300
 Transform:
@@ -13230,6 +13013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &813761168
@@ -13250,7 +13038,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &813761169
 Transform:
@@ -13429,6 +13217,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (62)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &820395853
@@ -13547,6 +13340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -13681,6 +13479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &836737269
@@ -13770,6 +13573,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &842744291
@@ -13788,7 +13596,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &842744292
 Transform:
@@ -13938,6 +13746,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &843284433
@@ -14057,6 +13870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &865838441
@@ -14075,7 +13893,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &865838442
 Transform:
@@ -14232,7 +14050,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &882815266
 Transform:
@@ -14299,7 +14117,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -14569,6 +14387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &920308618
@@ -14587,7 +14410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &920308619
 Transform:
@@ -14781,6 +14604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &932763991
@@ -14869,6 +14697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -15082,6 +14915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (56)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &944555729
@@ -15250,6 +15088,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (69)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &947620121
@@ -15263,7 +15106,6 @@ GameObject:
   - component: {fileID: 947620129}
   - component: {fileID: 947620128}
   - component: {fileID: 947620127}
-  - component: {fileID: 947620126}
   - component: {fileID: 947620125}
   - component: {fileID: 947620124}
   - component: {fileID: 947620123}
@@ -15273,7 +15115,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &947620122
 MonoBehaviour:
@@ -15284,13 +15126,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 947620121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &947620123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947620121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: e9e6cd0cc008ce4bb8da40f1888905a8
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 947620122}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &947620124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15336,18 +15203,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 947620123}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -15356,119 +15212,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &947620124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947620121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &947620125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947620121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 62c724a3066a054f9822695e465af29f
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 947620124}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &947620126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15757,6 +15501,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (79)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &957390093 stripped
@@ -15865,6 +15614,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (74)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &966679179
@@ -15954,6 +15708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (65)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &977901713
@@ -15972,7 +15731,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &977901714
 Transform:
@@ -16471,6 +16230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (57)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1040316163
@@ -16600,6 +16364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (59)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1056897366
@@ -16648,7 +16417,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1057077499
 Transform:
@@ -17030,6 +16799,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1100415887
@@ -17165,7 +16939,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1113257348
 Transform:
@@ -17486,6 +17260,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (87)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1137952885
@@ -17504,7 +17283,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1137952886
 Transform:
@@ -17583,7 +17362,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1148942973
 Transform:
@@ -17690,6 +17469,7 @@ GameObject:
   - component: {fileID: 1163894293}
   - component: {fileID: 1163894292}
   - component: {fileID: 1163894296}
+  - component: {fileID: 1163894298}
   - component: {fileID: 1163894297}
   m_Layer: 0
   m_Name: VRController (1)
@@ -17904,6 +17684,102 @@ MonoBehaviour:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
   allowToggleTo2D: 1
+--- !u!82 &1163894298
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163894290}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dbd5fb5dacd8d9d459850cbb747b2947, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1180786707
 GameObject:
   m_ObjectHideFlags: 0
@@ -17920,7 +17796,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1180786708
 Transform:
@@ -18123,7 +17999,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1193926809
 Transform:
@@ -18272,6 +18148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -18422,7 +18303,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1220700073
 Transform:
@@ -18724,6 +18605,10 @@ MonoBehaviour:
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &1230252565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18965,6 +18850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (89)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1248791477
@@ -18983,7 +18873,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1248791478
 Transform:
@@ -19212,6 +19102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1262526387
@@ -19309,7 +19204,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1263964052
 Transform:
@@ -19538,6 +19433,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &1283215235
@@ -19627,6 +19527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1309945595
@@ -19645,7 +19550,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1309945596
 Transform:
@@ -19794,6 +19699,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -19963,6 +19873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1321407445
@@ -19981,7 +19896,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1321407446
 Transform:
@@ -20181,6 +20096,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -20406,7 +20326,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1364074504
 Transform:
@@ -20556,6 +20476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!114 &1379571276
@@ -20571,10 +20496,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: ff720b173f2edd40aff6fa4054b9fd7f
+  _sceneViewUUID: dd62059a63d1bc40af1e2a24480cb236
   _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 1
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 0
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
   _isRootPrefabView: 0
   _components:
   - componentID: 1
@@ -20637,7 +20562,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1379721950
 Transform:
@@ -20716,7 +20641,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1380956439
 Transform:
@@ -20904,7 +20829,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1389008748
 Transform:
@@ -20971,7 +20896,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -21068,6 +20993,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (76)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &1391479430
@@ -21157,6 +21087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1392916867
@@ -21219,7 +21154,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1393134296
 Transform:
@@ -21907,6 +21842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (72)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &1431368063
@@ -21996,6 +21936,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1437755373
@@ -22013,7 +21958,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1437755374
 Transform:
@@ -22080,7 +22025,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -22176,6 +22121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -22391,6 +22341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1483345955
@@ -22487,7 +22442,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1487396129
 Transform:
@@ -22554,7 +22509,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -22782,7 +22737,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1507216954
 Transform:
@@ -23025,6 +22980,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (82)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1521187329
@@ -23043,7 +23003,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1521187330
 Transform:
@@ -23193,6 +23153,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (81)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1543245733
@@ -23210,7 +23175,7 @@ GameObject:
   - component: {fileID: 1543245739}
   - component: {fileID: 1543245738}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23403,6 +23368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (80)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &1552042166
@@ -23491,6 +23461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (84)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -23777,6 +23752,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1591932681
@@ -23861,7 +23841,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -24002,6 +23982,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (77)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1613021810
@@ -24022,7 +24007,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1613021811
 Transform:
@@ -24130,7 +24115,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1614158968
 Transform:
@@ -24377,6 +24362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -24999,7 +24989,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1651774335
 Transform:
@@ -25148,7 +25138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1662662718
 Transform:
@@ -25298,6 +25288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (83)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &1669277001
@@ -25386,6 +25381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -25506,6 +25506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1682156821
@@ -25552,7 +25557,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1699543490
 Transform:
@@ -25584,7 +25589,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1702307440
 Transform:
@@ -25780,7 +25785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 6b8e1aec9b1cc94395584271e72d5565
+  _sceneViewUUID: 33f6f86aed4bb84e824e3eb582028dc5
   _sceneViewOwnedByCreatingClient: 0
   _sceneViewPreventOwnershipTakeover: 0
   _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
@@ -25860,6 +25865,10 @@ MonoBehaviour:
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
   - viewID: 18
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
@@ -26178,6 +26187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (70)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1754168810
@@ -26198,7 +26212,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1754168811
 Transform:
@@ -26377,6 +26391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (85)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1763549061
@@ -26395,7 +26414,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1763549062
 Transform:
@@ -26568,7 +26587,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1773363596
 Transform:
@@ -26869,7 +26888,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -27095,6 +27114,10 @@ MonoBehaviour:
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &1791526256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27315,6 +27338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -27563,6 +27591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (90)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!114 &1846125755
@@ -27596,21 +27629,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1846125756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7844409035480352842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 0}
-  _ears: {fileID: 0}
-  wireframe: 0
 --- !u!20 &1846125757
 Camera:
   m_ObjectHideFlags: 0
@@ -27736,7 +27754,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -27762,7 +27780,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1852921389
 Transform:
@@ -27836,7 +27854,6 @@ GameObject:
   - component: {fileID: 1856263900}
   - component: {fileID: 1856263899}
   - component: {fileID: 1856263898}
-  - component: {fileID: 1856263897}
   - component: {fileID: 1856263896}
   - component: {fileID: 1856263895}
   - component: {fileID: 1856263894}
@@ -27846,7 +27863,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1856263893
 MonoBehaviour:
@@ -27857,13 +27874,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856263892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &1856263894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856263892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: b1b3ad3e8d17f340b59b9d92cfbc6cc9
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 1856263893}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &1856263895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27909,18 +27951,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1856263894}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -27929,119 +27960,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &1856263895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856263892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &1856263896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856263892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 4a92799da0e3b04fa02e95354d0d38f5
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 1856263895}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &1856263897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28232,6 +28151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1867485795
@@ -28399,6 +28323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -28696,7 +28625,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1886058096
 Transform:
@@ -28994,6 +28923,10 @@ MonoBehaviour:
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
 --- !u!114 &1897404857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29114,7 +29047,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1903602090
 Transform:
@@ -29264,6 +29197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (61)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1914042654
@@ -29277,7 +29215,6 @@ GameObject:
   - component: {fileID: 1914042662}
   - component: {fileID: 1914042661}
   - component: {fileID: 1914042660}
-  - component: {fileID: 1914042659}
   - component: {fileID: 1914042658}
   - component: {fileID: 1914042657}
   - component: {fileID: 1914042656}
@@ -29287,7 +29224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1914042655
 MonoBehaviour:
@@ -29298,13 +29235,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914042654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &1914042656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914042654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 93cd5960d30759428bcb56af39790ef3
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 1914042655}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &1914042657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29350,18 +29312,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1914042656}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -29370,119 +29321,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &1914042657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914042654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &1914042658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914042654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 49a9467a5794764997a7368412b3971e
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 1914042657}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &1914042659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29752,6 +29591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &1923443063
@@ -29770,7 +29614,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1923443064
 Transform:
@@ -29928,7 +29772,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1940776206
 Transform:
@@ -30002,7 +29846,6 @@ GameObject:
   - component: {fileID: 1943398076}
   - component: {fileID: 1943398075}
   - component: {fileID: 1943398074}
-  - component: {fileID: 1943398073}
   - component: {fileID: 1943398072}
   - component: {fileID: 1943398071}
   - component: {fileID: 1943398070}
@@ -30012,7 +29855,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1943398069
 MonoBehaviour:
@@ -30023,13 +29866,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943398068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityAverageFrames: 1
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 1
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _extrapolation: 0
 --- !u!114 &1943398070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943398068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 511a4c6cd92f034db4f9eb13f65320fa
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components:
+  - componentID: 1
+    component: {fileID: 1943398069}
+    componentIDHasBeenUsed: 1
+  _parentView: {fileID: 0}
+  _childViews: []
+--- !u!114 &1943398071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30075,18 +29943,7 @@ MonoBehaviour:
   restoreOriginalParent: 0
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943398070}
-        m_MethodName: Grabbed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
@@ -30095,119 +29952,7 @@ MonoBehaviour:
       m_Calls: []
   interactable: {fileID: 0}
   ownership: -1
---- !u!114 &1943398071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943398068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9011f3ecfff6bca47b885e91ea7a6049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _syncPosition: 1
-  _syncRotation: 1
-  _syncScale: 1
-  _extrapolation: 0
 --- !u!114 &1943398072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943398068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: 8e968fd1e1b7f74e895ada95824f0144
-  _sceneViewOwnedByCreatingClient: 0
-  _sceneViewPreventOwnershipTakeover: 0
-  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
-  _isRootPrefabView: 0
-  _components:
-  - componentID: 1
-    component: {fileID: 1943398071}
-    componentIDHasBeenUsed: 1
-  _parentView: {fileID: 0}
-  _childViews:
-  - viewID: 1
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 2
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 3
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 4
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 5
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 6
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 7
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 8
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 9
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 10
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 11
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 12
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 13
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 14
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 15
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 16
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 17
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
-  - viewID: 18
-    view: {fileID: 0}
-    viewIDHasBeenUsed: 1
-    viewToUseIfMovedBack: {fileID: 0}
---- !u!114 &1943398073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30435,7 +30180,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1970771071
 Transform:
@@ -30631,7 +30376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _realtime: {fileID: 114501697469761068}
-  _sceneViewUUID: e6019c3dbe46794aae8c55b4ee28e3fd
+  _sceneViewUUID: b4ba212e952ef1429fcee5f3b62ac667
   _sceneViewOwnedByCreatingClient: 0
   _sceneViewPreventOwnershipTakeover: 0
   _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
@@ -30711,6 +30456,10 @@ MonoBehaviour:
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
   - viewID: 18
+    view: {fileID: 0}
+    viewIDHasBeenUsed: 1
+    viewToUseIfMovedBack: {fileID: 0}
+  - viewID: 19
     view: {fileID: 0}
     viewIDHasBeenUsed: 1
     viewToUseIfMovedBack: {fileID: 0}
@@ -30927,7 +30676,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1995154590
 Transform:
@@ -31654,6 +31403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (88)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1 &2050326454
@@ -32056,7 +31810,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2061594844
 Transform:
@@ -32164,7 +31918,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2067213771
 Transform:
@@ -32604,7 +32358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2091397511
 Transform:
@@ -32683,7 +32437,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2096174666
 Transform:
@@ -32760,7 +32514,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2108049704
 Transform:
@@ -32863,6 +32617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass1 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
 --- !u!1001 &2124049532
@@ -32951,6 +32710,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: grass1 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 83af871f80820b54094ea42a04147a09,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83af871f80820b54094ea42a04147a09, type: 3}
@@ -33044,7 +32808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b6ae53fe1e66d429cc41bbf5b29cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localAvatarPrefab: {fileID: 4745503413182855036, guid: f9ebcddf409471c418f008089e9a2a6f,
+  _localAvatarPrefab: {fileID: 8429638297831053137, guid: ffdfbde519e8a9c4b8bf3cdb08d10418,
     type: 3}
   _localPlayer:
     root: {fileID: 1163894291}
@@ -36447,6 +36211,7 @@ GameObject:
   - component: {fileID: 7844409035469611968}
   - component: {fileID: 7844409035470440770}
   - component: {fileID: 794011138}
+  - component: {fileID: 7844409035480151891}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -36454,6 +36219,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7844409035480151891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844409035480151890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 0}
+  _ears: {fileID: 0}
+  wireframe: 0
 --- !u!1 &7844409035480154150
 GameObject:
   m_ObjectHideFlags: 0
@@ -36716,7 +36496,6 @@ GameObject:
   - component: {fileID: 7875091586853704624}
   - component: {fileID: 1846125757}
   - component: {fileID: 1846125755}
-  - component: {fileID: 1846125756}
   m_Layer: 0
   m_Name: '[SteamVR]'
   m_TagString: Untagged
@@ -38304,6 +38083,7 @@ GameObject:
   - component: {fileID: 5006512736021637609}
   - component: {fileID: 4044710142460482527}
   - component: {fileID: 7718390321654869798}
+  - component: {fileID: 8296172667969412091}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -38311,6 +38091,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8296172667969412091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667969412090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1011e140c5c34458f64fd8ad5095b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _realtime: {fileID: 114501697469761068}
+  _sceneViewUUID: 9b069ae84a1a3e44acf3d94f968757f6
+  _sceneViewOwnedByCreatingClient: 1
+  _sceneViewPreventOwnershipTakeover: 0
+  _sceneViewDestroyWhenOwnerOrLastClientLeaves: 1
+  _isRootPrefabView: 0
+  _components: []
+  _parentView: {fileID: 0}
+  _childViews: []
 --- !u!1 &8296172668348387139
 GameObject:
   m_ObjectHideFlags: 0
@@ -38643,7 +38444,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &8296172669271879745
 GameObject:

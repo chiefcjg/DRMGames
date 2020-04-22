@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.finalproject.exe",
+      "app_key": "application.generated.unity.scarealot.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\chief\\Desktop\\HDD\\Projects\\Final\\DRMGames\\FINAL\\Final Project\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "Final Project [Testing]"
+          "name": "Scare-a-lot [Testing]"
         }
       }
     }
