@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 2870283766585128560}
   - component: {fileID: 1146229494314033981}
   - component: {fileID: 4381526461206612544}
+  - component: {fileID: 7210437482673814861}
   m_Layer: 0
   m_Name: VRController Prefab
   m_TagString: VRPlayer
@@ -490,6 +491,19 @@ MonoBehaviour:
   _syncRotation: 1
   _syncScale: 1
   _extrapolation: 0
+--- !u!114 &7210437482673814861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745503413182855036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2004b3a5f0a4e48b8e1f8dce6fdf8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: 0
 --- !u!1 &4968318404708938804
 GameObject:
   m_ObjectHideFlags: 0

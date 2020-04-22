@@ -17,6 +17,7 @@ public class Bed2 : MonoBehaviour
         if (other.tag == "VRPlayer")
         {
             playerinBed = other.gameObject;
+            playerinBed.gameObject.GetComponent<PlayerScript>().Player = 2;
             GameObject.Find("GameManager").GetComponent<GameMain>().player2Ready = true;
         }
     }

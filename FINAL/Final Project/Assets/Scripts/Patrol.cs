@@ -16,6 +16,7 @@ public class Patrol : MonoBehaviour
 
     bool chasing;
     public Transform target = null;
+    public GameObject TargetPlayer;
     float distance;
 
     int pointCount;
@@ -69,6 +70,7 @@ public class Patrol : MonoBehaviour
                     CanSee = true;
                     Debug.Log("seeeeee");
                     target = hit.transform;
+                    TargetPlayer = target.gameObject;
                 }
                 else
                 {
@@ -101,14 +103,23 @@ public class Patrol : MonoBehaviour
             if (CanSee)
             {
                 Debug.Log("see it");
-                if (distance < 20)
+                if (distance < 1)
                 {
                     Debug.Log("chasing");
                     chasing = true;
                     agent.destination = target.position;
                 }
-                if (distance < 2)
+                if (distance < 1)
                 {
+                    if(TargetPlayer.GetComponent<PlayerScript>().Player == 1)
+                    {
+                        TargetPlayer.gameObject.transform.position = GameObject.Find("Spawn location 1").gameObject.transform.position;
+                    }
+
+                   else if (TargetPlayer.GetComponent<PlayerScript>().Player == 2)
+                    {
+                        TargetPlayer.gameObject.transform.position = GameObject.Find("Spawn location 2").gameObject.transform.position;
+                    }
                     Debug.Log("killed");
                     GotoNextPoint();
                     chasing = false;
@@ -129,7 +140,7 @@ public class Patrol : MonoBehaviour
     }
     IEnumerator waitForChaseTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         GotoNextPoint();
         chasing = false;
     }

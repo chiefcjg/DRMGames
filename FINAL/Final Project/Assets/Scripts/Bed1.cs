@@ -14,11 +14,10 @@ public class Bed1 : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("work");
         if (other.tag == "VRPlayer")
         {
-            Debug.Log("work2");
             playerinBed = other.gameObject;
+            playerinBed.gameObject.GetComponent<PlayerScript>().Player = 1;
             GameObject.Find("GameManager").GetComponent<GameMain>().player1Ready = true;
         }
     }

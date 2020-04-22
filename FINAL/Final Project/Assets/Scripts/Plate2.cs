@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class Plate2 : MonoBehaviour
 {
+    public Vector3 endPosition;
     public Vector3 originalLocation;
-
-    //adjust this to change speed
-    float speed = 5f;
-    //adjust this to change how high it goes
-    float height = 0.5f;
+    public Vector3 movingLocation;
+    public bool MovingPlateDone = false;
+    public bool MovePlate = false;
 
     private void Awake()
     {
-        originalLocation = this.gameObject.transform.position;
+        originalLocation = this.transform.position;
+        endPosition = new Vector3 (originalLocation.x, (originalLocation.y - 0.1f), originalLocation.z);
+    }
+
+    private void Update()
+    {
+        if(this.transform.position == endPosition)
+        {
+            this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            MovingPlateDone = true;
+        }
+        if(MovePlate == true)
+        {
+            PlayerHere();
+        }
+        if (MovingPlateDone == true)
+        {
+            GameObject.Find("GameManager").GetComponent<GameMain>().Plate2Ready = true;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "VRPlayer")
         {
-            while(other.tag == "VRPlayer")
-            {
-                //get the objects current position and put it in a variable so we can access it later with less code
-                Vector3 pos = this.transform.position;
-                //calculate what the new Y position will be
-                float newY = Mathf.Sin(Time.time * speed);
-                //set the object's Y to the new calculated Y
-                this.transform.position = new Vector3(pos.x, newY, pos.z) * height;
-            }
+            MovePlate = true;
         }
     }
 
@@ -36,7 +45,12 @@ public class Plate2 : MonoBehaviour
     {
         if (other.tag == "VRPlayer")
         {
-            this.transform.position = originalLocation;
+            MovePlate = false;
         }
+    }
+
+    public void PlayerHere()
+    {
+        this.gameObject.transform.position = new Vector3(originalLocation.x, (originalLocation.y - 0.1f), originalLocation.z);
     }
 }
