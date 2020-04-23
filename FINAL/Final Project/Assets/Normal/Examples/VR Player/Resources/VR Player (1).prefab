@@ -39,7 +39,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178129922129340614}
-  m_Mesh: {fileID: 4300000, guid: 63d3e98e570932546b712b8f10c08d46, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 65d8eda911e0ba548a3674f65c43308b, type: 3}
 --- !u!23 &3627803490334119480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713809912722378292}
-  m_Mesh: {fileID: 4300000, guid: 76bc15fe3bdcf5342ace6a4ae91af11a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 641e9d2f5c6b4cb438161abef3be8300, type: 3}
 --- !u!23 &4449773628197873999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -546,12 +546,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Sensitivity: 0.1
-  m_MaxSpeed: 1
+  m_MaxSpeed: 3
   m_MovePress:
-    actionPath: 
+    actionPath: /actions/default/in/Teleport
     needsReinit: 0
   m_MoveValue:
-    actionPath: 
+    actionPath: /actions/default/in/TouchpadPostition
     needsReinit: 0
 --- !u!114 &7009614447944652821
 MonoBehaviour:
